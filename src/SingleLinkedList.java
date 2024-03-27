@@ -1,10 +1,6 @@
-import java.io.*;
 import java.util.*;
-import java.text.*;
-import java.math.*;
-import java.util.regex.*;
 
-interface ILinkedList {
+interface LinkedList {
     /**
      * Inserts a specified element at the specified position in the list.
      * @param index
@@ -51,7 +47,7 @@ interface ILinkedList {
      * @param toIndex
      * @return a view of the portion of this list between the specified fromIndex and toIndex, inclusively.
      */
-    public ILinkedList sublist(int fromIndex, int toIndex);
+    public LinkedList sublist(int fromIndex, int toIndex);
     /**
      * @param o
      * @return true if this list contains an element with the same value as the specified element.
@@ -59,7 +55,7 @@ interface ILinkedList {
     public boolean contains(Object o);
 }
 
-class SingleLinkedList implements ILinkedList {
+class SingleLinkedList implements LinkedList {
 
     Node head ;
     public void show(){
@@ -202,7 +198,7 @@ class SingleLinkedList implements ILinkedList {
         }
         return size ;
     }
-    public ILinkedList sublist(int fromIndex, int toIndex){
+    public LinkedList sublist(int fromIndex, int toIndex){
         Node n = head ;
         SingleLinkedList sublist = new SingleLinkedList() ;
         int index =0 ;
